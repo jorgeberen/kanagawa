@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-html,
-body {
-  overflow-x: hidden;
-}
 body {
   height: 100vh;
   position: relative;
@@ -498,6 +494,10 @@ footer {
 }
 
 @media only screen and (max-width: 450px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
   #title {
     font-size: 1.3em;
   }
