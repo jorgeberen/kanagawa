@@ -489,3 +489,9 @@ footer {
     margin-left: (-200px);
   }
 }
+
+@media only screen and (max-width: 450px) {
+  #title {
+    font-size: 1.3em;
+  }
+}
