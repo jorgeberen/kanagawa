@@ -525,5 +525,9 @@ footer a {
   #title {
     font-size: 1.3em;
   }
+  .services li:hover span {
+    width: 200px;
+    z-index: 12;
+  }
 }
 /*# sourceMappingURL=style.css.map */
