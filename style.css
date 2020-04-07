@@ -301,6 +301,7 @@ body {
   margin-left: -200px;
   background-color: #fff;
   z-index: 12;
+  max-width: 90vw;
 }
 
 .modal-form .close-button {
