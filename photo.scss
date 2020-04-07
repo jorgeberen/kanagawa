@@ -1,0 +1,492 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "Sansation";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Sansation"), url("Sansation_Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Sansation Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Sansation Light"), url("Sansation_Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Sansation Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Sansation Bold"), url("Sansation_Bold.woff") format("woff");
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(182, 202, 228, 0.4);
+}
+
+.overlay-border {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  max-width: 1000px;
+
+  border-right: solid #333;
+  border-left: solid #333;
+  z-index: 9;
+  margin: auto;
+}
+
+.hero {
+  margin: auto;
+  width: 100vw;
+  max-width: 1000px;
+  height: 400px;
+  background-image: url(./img/jeremy-bishop-iftBhUFfecE-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.content {
+  margin: auto;
+  text-align: center;
+}
+
+.box {
+  height: 100px;
+  min-height: 70px;
+  background-color: rgb(241, 195, 77);
+  position: relative;
+  top: 100px;
+  display: flex;
+  transform: skewy(-11deg);
+  font-family: "Sansation Bold";
+  img {
+    width: 25px;
+  }
+}
+
+#team {
+  position: relative;
+  margin: auto;
+  max-width: 1000px;
+  width: 100vw;
+  font-family: "Sansation Bold";
+  h1 {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    background: rgba(115, 176, 226, 0.3);
+    background-size: fit;
+  }
+
+  .team-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    background: rgba(115, 176, 226, 0.3);
+  }
+
+  .card {
+    width: 300px;
+    height: 200px;
+    border: solid #333;
+    margin: auto;
+  }
+}
+
+// photos of the team
+
+#miguel {
+  position: relative;
+  background-image: url(./img/miguel.jpg);
+  background-size: 150%;
+  background-position: 60% 10%;
+  &::before {
+    content: "MIGUEL";
+    position: absolute;
+    top: -20px;
+    left: 0;
+  }
+}
+
+#maria {
+  position: relative;
+  background-image: url(./img/maria.jpg);
+  background-size: 180%;
+  background-position: 50% 25%;
+  &::before {
+    content: "MARIA";
+    position: absolute;
+    top: -20px;
+    left: 0;
+  }
+}
+
+#pedro {
+  position: relative;
+  background-image: url(./img/tyler-nix-qRe_JwzJPqQ-unsplash.jpg);
+  background-size: 150%;
+  background-position: 50% 25%;
+  &::before {
+    content: "PEDRO";
+    position: absolute;
+    top: -20px;
+    left: 0;
+  }
+}
+
+// Middle section of the page with servies and get in touch card
+
+.more-content {
+  display: flex;
+
+  justify-content: space-between;
+  font-family: "Sansation Bold";
+  background: rgba(115, 176, 226, 0.3);
+  background-size: cover;
+  h2 {
+    text-align: left;
+    padding-left: 0.6em;
+  }
+  max-width: 1000px;
+  width: 100vw;
+  margin: auto;
+  position: relative;
+  // top: 30px;
+  padding: 2.5em 2em 2em 2em;
+}
+
+// Services We offer styling
+
+.services {
+  position: relative;
+  list-style: none;
+  z-index: 10;
+
+  li {
+    font-family: "Sansation";
+    font-size: 1.5em;
+    padding: 0.6em;
+    text-align: left;
+    position: relative;
+    left: 40px;
+    // cursor: pointer;
+    span {
+      display: none;
+    }
+    &:hover {
+      span {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 10px;
+        width: 370px;
+        padding: 0.2em;
+        background: #fff;
+        border: 1px solid #000;
+        font-size: 0.7em;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    }
+  }
+  li::before {
+    content: "";
+    background-image: url(./img/bullet.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 30px;
+    height: 22px;
+    left: -25px;
+    top: 20px;
+  }
+}
+
+#contact-modal {
+  max-width: 300px;
+  border: solid goldenrod;
+  padding: 1em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h3 {
+    font-family: "Sansation";
+  }
+  p {
+    font-family: "Sansation Light";
+    padding-top: 0.5em;
+    line-height: 25px;
+    font-size: 18px;
+  }
+  i {
+    font-size: 100px;
+    margin: auto;
+  }
+  button {
+    border: none;
+
+    padding: 1em;
+    background-color: rgb(29, 29, 143);
+    color: #fff;
+    z-index: 11;
+    font-size: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(182, 202, 228, 0.9);
+  z-index: 11;
+}
+
+.activated {
+  display: none;
+}
+
+.modal-form {
+  display: flex;
+  margin: auto;
+  width: 400px;
+  height: 700px;
+  font-family: "Sansation";
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  margin-left: (-200px);
+  background-color: #fff;
+  z-index: 12;
+  .close-button {
+    font-family: "Courier New", Courier, monospace;
+    position: absolute;
+    float: left;
+    font-size: 28px;
+    line-height: 1.5rem;
+    font-weight: bold;
+    padding: 0.2em 0.3em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: black;
+  }
+  .modal-content {
+    background-color: rgb(241, 195, 77);
+    width: 100%;
+  }
+
+  h3 {
+    text-align: center;
+    padding-top: 0.5em;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+  }
+  label {
+    padding-bottom: 0.4em;
+  }
+  input {
+    height: 28px;
+    color: #fff;
+    background-color: rgb(29, 29, 143);
+    font-size: 14px;
+    border: none;
+  }
+  textarea {
+    color: #fff;
+    background-color: rgb(29, 29, 143);
+    font-size: 16px;
+    border: none;
+  }
+  .btn-modal {
+    color: #fff;
+    background-color: rgb(29, 29, 143);
+    padding: 0.5em 0 0.5em 0;
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.no-display {
+  display: none;
+}
+
+footer {
+  font-family: "Sansation";
+  display: flex;
+  position: relative;
+  // top: 40px;
+  margin: auto;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  background-color: rgb(29, 29, 143);
+  color: #fff;
+  max-width: 1000px;
+  width: 100vw;
+  font-size: 18px;
+  z-index: 10;
+
+  ul {
+    position: relative;
+    margin: auto;
+    list-style: none;
+    text-align: center;
+  }
+  .social {
+    position: absolute;
+    left: 55px;
+    top: 25%;
+
+    li {
+      display: inline-block;
+      font-size: 26px;
+      padding: 1em;
+      z-index: 11;
+    }
+  }
+  i {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  a {
+    color: yellow;
+  }
+}
+
+#tlf {
+  position: relative;
+}
+
+@media only screen and (min-width: 700px) {
+  .hero {
+    background-position: 50% 75%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .hero {
+    background-position: 50% 85%;
+  }
+}
+
+@media only screen and (max-width: 996px) {
+  .overlay-border {
+    display: none;
+  }
+  #team {
+    font-family: "Sansation Bold";
+    h1 {
+      text-align: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+
+      background: rgba(115, 176, 226, 0.3);
+      background-size: fit;
+    }
+
+    .team-container {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 30px;
+    }
+
+    .card {
+      width: 80vw;
+      max-width: 500px;
+      min-width: 300px;
+      height: 200px;
+      border: solid #333;
+    }
+  }
+  #miguel {
+    background-size: 100%;
+
+    background-repeat: no-repeat;
+  }
+  #maria {
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  #pedro {
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .services {
+    font-size: 12px;
+  }
+  .more-content {
+    flex-direction: column;
+    .services {
+      margin: auto;
+      li::before {
+        content: "";
+        background-image: url(./img/bullet.svg);
+        background-size: 70%;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 30px;
+        height: 22px;
+        left: -25px;
+        top: 12px;
+      }
+    }
+    #contact-modal {
+      margin: 1.5em auto auto auto;
+    }
+  }
+
+  #main-footer {
+    .social {
+      position: absolute;
+      left: 20px !important;
+      top: 30%;
+      li {
+        display: block;
+        padding: 0.05em;
+      }
+    }
+  }
+  #contact-modal {
+    button {
+      margin-top: 0.5em;
+      padding: 0.5em;
+    }
+  }
+
+  .modal-form {
+    position: absolute;
+    left: 50%;
+    top: 145%;
+    margin-left: (-200px);
+  }
+}
