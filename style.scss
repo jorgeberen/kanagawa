@@ -488,7 +488,7 @@ footer {
   .modal-form {
     position: absolute;
     left: 50%;
-    top: 145%;
+    top: 180%;
     margin-left: (-200px);
   }
 }
@@ -510,5 +510,12 @@ footer {
         }
       }
     }
+  }
+  .modal-form {
+    position: absolute;
+    left: 50%;
+    top: 195%;
+    margin-left: (-150px);
+    width: 320px;
   }
 }
